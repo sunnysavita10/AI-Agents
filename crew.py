@@ -1,12 +1,12 @@
 from crewai import Crew,Process
 from agents import blog_researcher,blog_writer
-from tasks import research_task,write_task
+from task import research ,write
 
 
 # Forming the tech-focused crew with some enhanced configurations
 crew = Crew(
   agents=[blog_researcher, blog_writer],
-  tasks=[research_task, write_task],
+  tasks=[research, write],
   process=Process.sequential,  # Optional: Sequential task execution is default
   memory=True,
   cache=True,
@@ -15,5 +15,5 @@ crew = Crew(
 )
 
 ## start the task execution process with enhanced feedback
-result=crew.kickoff(inputs={'topic':'AI VS ML VS DL vs Data Science'})
+result=crew.kickoff(inputs={'topic':'Realtime Multimodal RAG Usecase Part 3 | MultiVectorRetriever with Langchain | RAG Application'})
 print(result)

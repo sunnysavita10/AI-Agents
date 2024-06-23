@@ -1,9 +1,9 @@
-from crew import Task
+from crewai import Task
 from tools import yt_tool
 from agents import blog_researcher,blog_writer
 
 ## Research Task
-research_task = Task(
+research = Task(
   description=(
     "Identify the video {topic}."
     "Get detailed information about the video from the channel video."
@@ -14,7 +14,7 @@ research_task = Task(
 )
 
 # Writing task with language model configuration
-write_task = Task(
+write = Task(
   description=(
     "get the info from the youtube channel on the topic {topic}."
   ),
